@@ -21,23 +21,19 @@ class MainActivity : AppCompatActivity() {
 
 
         button.setOnClickListener {
-            // Toast.makeText(it.context, "Clicked Button!", Toast.LENGTH_SHORT).show()
             counter++
             textView.text = counter.toString()
 
             if (counter >= 100) {
 
-                // Show upgrade button and set onClickListener
                 upgradeButton.visibility = View.VISIBLE
                 upgradeButton.setOnClickListener {
 
-                    // Update original button to add 2 instead of `
                     button.setOnClickListener {
                         counter += 2
                         textView.text = counter.toString()
                     }
 
-                    // Hide upgrade button again
                     upgradeButton.visibility = View.INVISIBLE
                 }
             }
